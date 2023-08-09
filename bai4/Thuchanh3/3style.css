@@ -1,0 +1,21 @@
+h1{
+    margin: 0 auto;
+    text-align: center;
+    background-color: aqua;
+}
+p{
+    font-size: 18px;
+    line-height: 1.5;
+    margin: 25px 0;
+    text-align: center;
+}
+img{
+    display: flex;
+    margin: 0 auto;
+    max-width: 100%;
+}
+footer{
+    text-align: center;
+    font-size: 80px;
+    margin-top: 100px;
+}
