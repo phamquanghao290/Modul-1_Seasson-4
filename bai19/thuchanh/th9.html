@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function makeWish(name, wish) {
+            if (name && wish) {
+                alert("Xin chào, " + name + "! Điều bạn muốn ước trong năm nay là: " + wish);
+            } else {
+                alert("Vui lòng nhập tên và điều bạn muốn ước trong năm nay.");
+            }
+        }
+
+        // Sử dụng hàm và truyền tham số name và wish
+        let userName = prompt("Nhập tên của bạn:");
+        let userWish = prompt("Nhập điều bạn muốn ước trong năm nay:");
+
+        makeWish(userName, userWish);
+
+    </script>
+</body>
+
+</html>

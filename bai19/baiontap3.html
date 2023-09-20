@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <h1>Create New Item</h1>
+    <label for="">Item</label>
+    <input type="text" name="Item">
+    <button>add</button><br><br>
+    <ul>
+        <li>nho mỹ</li>
+        <li>táo tàu</li>
+        <li>lâm Wibu</li>
+    </ul> -->
+
+
+    <h1>Create New Item</h1>
+    <label for="item">Item</label>
+    <input type="text" name="item" id="item" style="background-color: yellow;">
+    <button id="addItem">add</button><br><br>
+    <ul id="itemList">
+        <li>nho mỹ</li>
+        <li>táo tàu</li>
+        <li>lâm Wibu</li>
+    </ul>
+    
+    <script>
+        let addItemButton = document.getElementById('addItem');
+        let itemInput = document.getElementById('item');
+        let itemList = document.getElementById('itemList');
+
+        addItemButton.addEventListener('click', function () {
+            let newItemText = itemInput.value.trim();
+
+            if (newItemText !== '') {
+                itemInput.style.backgroundColor = 'yellow';
+                let newItem = document.createElement('li');
+                newItem.textContent = newItemText;
+                itemList.appendChild(newItem);
+                itemInput.value = '';
+            } else {
+                itemInput.style.backgroundColor = 'yellow';
+            }
+        });
+
+        itemInput.addEventListener('input', function () {
+            if (itemInput.value !== '') {
+                itemInput.style.backgroundColor = ''; // Reset background color
+            }
+        });
+    </script>
+
+</body>
+</html>

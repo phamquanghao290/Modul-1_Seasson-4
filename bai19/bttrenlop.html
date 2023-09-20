@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <div id="myDiv"></div>
+    <script>
+        let myDiv = document.getElementById("myDiv");
+        let form = document.createElement("form");
+        myDiv.appendChild(form)
+        let userName =document.createElement("input");
+        form.appendChild(userName);
+        let password = document.createElement("input");
+        form.appendChild(userName);
+        userName.setAttribute("type", "text")
+        userName.placeholder("username")
+    </script> -->
+    <div id="myDiv"></div>
+    <script>
+        let myDiv = document.getElementById("myDiv");
+        let form = document.createElement("form"); // Sửa: Thay "document.createAttribute" bằng "document.createElement"
+        myDiv.appendChild(form);
+
+        let userName = document.createElement("input");
+        userName.setAttribute("type", "text"); // Sửa: Sử dụng "setAttribute" để đặt thuộc tính "type"
+        userName.setAttribute("placeholder", "username"); // Sửa: Đặt thuộc tính "placeholder"
+        form.appendChild(userName);
+
+        let password = document.createElement("input");
+        password.setAttribute("type", "password"); // Thêm: Đặt thuộc tính "type" cho mật khẩu
+        password.setAttribute("placeholder", "password"); // Thêm: Đặt thuộc tính "placeholder" cho mật khẩu
+        form.appendChild(password);
+    </script>
+</body>
+</html>

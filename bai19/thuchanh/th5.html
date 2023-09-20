@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <div class="singer">James Bay</div>
+        <div class="singer">Nate Ruess</div>
+        <div class="singer">Ed Sheeran</div>
+        <div class="singer">Steve Garrigan</div>
+
+    <script>
+        let name = document.getElementsByTagName("div")
+        for(let i = 0; i < name.length; i++){
+            if(name[i].classList.contains("singer")){
+                console.log(name[i].textContent);
+                break;
+            }
+        }
+        for(let i = 0; i < name.length; i++){
+             if (name[i].classList.contains("singer")) {
+                console.log(name[i].textContent);
+            }
+        }
+    </script>
+    <div>
+</body>
+</html>

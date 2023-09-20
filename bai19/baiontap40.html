@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Student Management</h1>
+    <form id="studentForm">
+        <label for="studentId">Student Id</label>
+        <input type="text" id="studentId" name="StudentId"><br><br>
+        <label for="studentName">Student Name</label>
+        <input type="text" id="studentName" name="StudentName"><br><br>
+        <label for="age">Age</label>
+        <input type="text" id="age" name="Age"><br><br>
+        <label for="phone">Phone</label>
+        <input type="text" id="phone" name="Phone"><br><br>
+        <label for="email">Email</label>
+        <input type="text" id="email" name="Email"><br><br>
+        <button type="button" id="createButton">Create</button>
+    </form>
+
+    <div id="studentInfo"></div>
+
+    <script>
+        let studentForm = document.getElementById("studentForm");
+        let createButton = document.getElementById("createButton");
+        let studentInfo = document.getElementById("studentInfo");
+
+        let students = [];
+
+        createButton.addEventListener("click", function () {
+            let studentId = document.getElementById("studentId").value;
+            let studentName = document.getElementById("studentName").value;
+            let age = document.getElementById("age").value;
+            let phone = document.getElementById("phone").value;
+            let email = document.getElementById("email").value;
+
+            // Tạo một đối tượng sinh viên mới
+            function renderJobs(listJobs) {
+                let text = "";
+                for (let i = 0; i < listJobs.length; i++) {
+                    text +=
+                        `
+                    <tr> 
+                        <td> ${i + 1} </td>
+                        <td> ${listJobs[i].job}</td>
+                        <td> ${listJobs[i].id} </td>
+                        <td onclick=updateJob(${listJobs[i].id})> Sửa</td>
+                        <td onclick=deleteJob(${listJobs[i].id})> Xoá </td>
+                    </tr>
+                `
+                }
+                document.getElementById("body").innerHTML = text;
+
+            // Thêm sinh viên vào danh sách
+            students.push(newStudent);
+
+            // Hiển thị thông tin sinh viên
+            displayStudentInfo();
+
+            // Xóa dữ liệu trong form sau khi tạo mới sinh viên
+            studentForm.reset();
+        });
+
+        // Hiển thị thông tin sinh viên
+        function displayStudentInfo() {
+            studentInfo.innerHTML = "<h2>Student Information</h2>";
+            students.forEach(function (student, index) {
+                studentInfo.innerHTML += `
+                    <div>
+                        <strong>Student ID:</strong> ${student.StudentId}<br>
+                        <strong>Name:</strong> ${student.StudentName}<br>
+                        <strong>Age:</strong> ${student.Age}<br>
+                        <strong>Phone:</strong> ${student.Phone}<br>
+                        <strong>Email:</strong> ${student.Email}<br>
+                        <button onclick="editStudent(${index})">Edit</button>
+                        <button onclick="deleteStudent(${index})">Delete</button>
+                    </div>
+                `;
+            });
+        }
+
+        // Xóa sinh viên
+        function deleteStudent(index) {
+            students.splice(index, 1);
+            displayStudentInfo();
+        }
+
+        // Sửa thông tin sinh viên
+        function editStudent(index) {
+            let student = students[index];
+            document.getElementById("studentId").value = student.StudentId;
+            document.getElementById("studentName").value = student.StudentName;
+            document.getElementById("age").value = student.Age;
+            document.getElementById("phone").value = student.Phone;
+            document.getElementById("email").value = student.Email;
+            deleteStudent(index);
+        }
+    </script>
+</body>
+
+</html>

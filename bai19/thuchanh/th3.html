@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+    var:
+    Biến được khai báo bằng var có phạm vi hoạt động là function scope hoặc global scope, tùy thuộc vào nơi biến được khai
+    báo.
+    Biến var được hoisted (đưa lên đầu) trong phạm vi của hàm hoặc toàn bộ tài liệu, có nghĩa là bạn có thể truy cập biến
+    trước khi nó được khai báo trong mã. Tuy nhiên, giá trị của biến sẽ là undefined cho đến khi nó được gán một giá trị.
+    
+    let:
+    Biến được khai báo bằng let có phạm vi hoạt động là block scope (phạm vi khối), có nghĩa rằng biến chỉ có thể truy cập được trong khối mã mà nó được khai báo.
+    Biến let cũng được hoisted, nhưng khác với var, bạn không thể truy cập biến trước khi nó được khai báo. Nếu bạn cố gắng làm điều này, bạn sẽ nhận được một lỗi ReferenceError.
+    -->
+    <script>
+        function exampleVarScope() {
+                if (true) {
+                    var x = 10;
+                }
+                console.log(x); // Biến x có thể truy cập ở bất kỳ đâu trong hàm exampleVarScope
+            }
+
+// *********************************************************************
+        function exampleLetScope() {
+                if (true) {
+                    let y = 20;
+                }
+                console.log(y); // Lỗi ReferenceError: y is not defined
+            }
+    </script>
+</body>
+</html>

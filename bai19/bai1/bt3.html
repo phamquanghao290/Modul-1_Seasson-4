@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container {
+        background-color: aquamarine;
+        width: 400px;
+        height: 250px;
+    }
+    .square {
+        width: 100px;
+        height: 100px;
+        display: inline-block;
+        margin-right: 10px;
+        /* Khoảng cách giữa các ô vuông */
+    }
+    .yellow {
+        background-color: yellow;
+    }
+
+    .green {
+        background-color: green;
+    }
+
+    .gray {
+        background-color: gray;
+    }
+</style>
+<body>
+    <div class="container">
+        <h1>Change Background Color</h1>
+        <p>Mouse over the squares!</p><br>
+        <div class="square yellow" onmouseover="color('yellow')"></div>
+        <div class="square green" onmouseover="color('green')"></div>
+        <div class="square gray" onmouseover="color('gray')"></div>
+    </div>
+    
+    <script>
+        function color(color) {
+            let container = document.querySelector('.container');
+            container.style.backgroundColor = color;
+        }
+    </script>
+</body>
+</html>

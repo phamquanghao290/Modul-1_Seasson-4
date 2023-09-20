@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .container {
+        display: flex;
+        justify-content: space-around;
+    }
+    .phim {
+        margin-left: 300px;
+    }
+</style>
+
+<body>
+    <fieldset style=" width: 800px;">
+        <h1>Form đặt hàng online</h1><br>
+        <div class="container">
+            <table>
+                <tr>
+                    <td><label for="studentId">Thông tin người mua</label></td>
+                </tr>
+                <tr>
+                    <td><label for="hovaten">Họ và tên</label></td>
+                    <td><input type="text" id="hovaten" name="Họ và tên"></td>
+                </tr>
+                <tr>
+                    <td><label for="Email">Email</label></td>
+                    <td><input type="text" id="Email" name="Email"></td>
+                </tr>
+                <tr>
+                    <td><label for="phonenumber">Điện thoại</label></td>
+                    <td><input type="text" id="phonenumber" name="Điện thoại"></td>
+                </tr>
+                <tr>
+                    <td><label for="address">Địa chỉ</label></td>
+                    <td><input type="text" id="address" name="Địa chỉ"></td>
+                </tr>
+                <tr>
+                    <td><label for="ngaydat">Ngày đặt</label></td>
+                    <td><input type="text" id="ngaydat" name="Ngày đặt"></td>
+                </tr>
+                <tr>
+                    <td><label for="thanhtoan">Phương thức thanh toán</label></td>
+                    <td><input type="text" id="thanhtoan" name="Phương thức thanh toán"></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"> Gửi mail cho tôi</td>
+                </tr>
+            </table>
+
+            <table>
+                <tr>
+                    <td><label for="studentId">Thông tin người nhận</label></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox">Tôi là người nhận</td>
+                </tr>
+                <tr>
+                    <td><label for="hovaten">Họ và tên</label></td>
+                    <td><input type="text" id="hovaten" name="Họ và tên"></td>
+                </tr>
+                <tr>
+                    <td><label for="Email">Email</label></td>
+                    <td><input type="text" id="Email" name="Email"></td>
+                </tr>
+                <tr>
+                    <td><label for="phonenumber">Điện thoại</label></td>
+                    <td><input type="text" id="phonenumber" name="Điện thoại"></td>
+                </tr>
+                <tr>
+                    <td><label for="address">Địa chỉ</label></td>
+                    <td><input type="text" id="address" name="Địa chỉ"></td>
+                </tr>
+                <tr>
+                    <td><label for="ghichu">Ghi chú</label></td>
+                    <td><textarea name="" id="" cols="25" rows="5"></textarea></td>
+                </tr>
+            </table>
+        </div>
+        <div class="phim">
+            <button>Đặt hàng</button>
+            <button>Nhập lại</button>
+        </div>
+    </fieldset>
+</body>
+
+</html>

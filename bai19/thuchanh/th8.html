@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="wishButton">Click to Make a Wish</button>
+    <script>
+        // Hàm xử lý sự kiện khi nút được nhấn
+        function makeWish() {
+            // Lấy giá trị tên từ trường input
+            let name = prompt("Nhập tên của bạn:");
+
+            if (name) {
+                // Lấy giá trị điều ước từ trường input
+                let wish = prompt("Nhập điều bạn muốn ước trong năm nay:");
+
+                if (wish) {
+                    // Hiển thị thông báo alert với thông tin đã nhập
+                    alert("Xin chào, " + name + "! Điều bạn muốn ước trong năm nay là: " + wish);
+                } else {
+                    alert("Xin chào, " + name + "! Bạn không nhập điều ước.");
+                }
+            } else {
+                alert("Bạn không nhập tên.");
+            }
+        }
+
+        // Gắn hàm xử lý sự kiện vào nút bằng cách sử dụng DOM
+        let wishButton = document.getElementById("wishButton");
+        wishButton.addEventListener("click", makeWish);
+    </script>
+
+</body>
+</html>

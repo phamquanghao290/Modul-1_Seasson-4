@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <h1>Student management</h1>
+    <form>
+        <label for="">Student Id</label>
+        <input type="text" name="Student Id"><br><br>
+        <label for="">Student Name</label>
+        <input type="text" name="Student Name"><br><br>
+        <label for="">Age</label>
+        <input type="text" name="Age"><br><br>
+        <label for="">Phone</label>
+        <input type="text" name="Phone"><br><br>
+        <label for="">Email</label>
+        <input type="text" name="Email"><br><br>
+        <button>Create</button>
+    </form> -->
+
+
+    <h1>Student management</h1>
+    <table>
+        <tr>
+            <td><label for="studentId">Student Id</label></td>
+            <td><input type="text" id="studentId" name="StudentId"></td>
+        </tr>
+        <tr>
+            <td><label for="studentName">Student Name</label></td>
+            <td><input type="text" id="studentName" name="StudentName"></td>
+        </tr>
+        <tr>
+            <td><label for="age">Age</label></td>
+            <td><input type="text" id="age" name="Age"></td>
+        </tr>
+        <tr>
+            <td><label for="phone">Phone</label></td>
+            <td><input type="text" id="phone" name="Phone"></td>
+        </tr>
+        <tr>
+            <td><label for="email">Email</label></td>
+            <td><input type="text" id="email" name="Email"></td>
+        </tr>
+    </table>
+    <button id="createButton">Create</button>
+    
+    <div id="studentInfo"></div>
+    
+    <script>
+        const createButton = document.getElementById('createButton');
+        const studentIdInput = document.getElementById('studentId');
+        const studentNameInput = document.getElementById('studentName');
+        const ageInput = document.getElementById('age');
+        const phoneInput = document.getElementById('phone');
+        const emailInput = document.getElementById('email');
+        const studentInfoDiv = document.getElementById('studentInfo');
+
+        createButton.addEventListener('click', function () {
+            const studentId = studentIdInput.value;
+            const studentName = studentNameInput.value;
+            const age = parseInt(ageInput.value);
+            const phone = phoneInput.value;
+            const email = emailInput.value;
+
+            let isValid = true;
+            let errorMessage = '';
+
+            // Kiểm tra điều kiện
+            if (studentId.length !== 6) {
+                isValid = false;
+                errorMessage += 'Student Id phải gồm 6 ký tự. ';
+            }
+
+            if (studentName === '') {
+                isValid = false;
+                errorMessage += 'Student Name không được để trống. ';
+            }
+
+            if (age < 18) {
+                isValid = false;
+                errorMessage += 'Age phải có giá trị lớn hơn hoặc bằng 18. ';
+            }
+
+            // Sử dụng regex để kiểm tra định dạng số điện thoại Việt Nam (bắt đầu bằng 0 và có 10 số)
+            const phonePattern = /^0\d{9}$/;
+            if (!phonePattern.test(phone)) {
+                isValid = false;
+                errorMessage += 'Phone phải có định dạng số điện thoại ở VN. ';
+            }
+
+            // Sử dụng regex để kiểm tra định dạng email
+            const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+            if (!emailPattern.test(email)) {
+                isValid = false;
+                errorMessage += 'Email phải có định dạng email. ';
+            }
+
+            if (isValid) {
+                // Nếu dữ liệu hợp lệ, hiển thị thông tin sinh viên
+                const studentInfo = `
+                    <h2>Thông tin sinh viên</h2>
+                    <p><strong>Student Id:</strong> ${studentId}</p>
+                    <p><strong>Student Name:</strong> ${studentName}</p>
+                    <p><strong>Age:</strong> ${age}</p>
+                    <p><strong>Phone:</strong> ${phone}</p>
+                    <p><strong>Email:</strong> ${email}</p>
+                `;
+                studentInfoDiv.innerHTML = studentInfo;
+            } else {
+                // Nếu dữ liệu không hợp lệ, hiển thị thông báo lỗi
+                alert(errorMessage);
+            }
+        });
+    </script>
+
+
+</body>
+</html>

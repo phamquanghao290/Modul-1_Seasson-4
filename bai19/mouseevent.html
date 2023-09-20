@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="myDiv" style="width: 100px;height: 100px; background-color: blue;"></div>
+    <script>
+        // sự kiện xảy ra khi nhấn chuột xuống
+        let myDiv = document.getElementById("myDiv");
+        myDiv.addEventListener("mousedown", () =>{
+            console.log("nhấc chuột xuống");
+        })
+        // sự kiện xảy ra khi nhấc chuột lên
+        myDiv.addEventListener("mouseup", () => {
+                console.log("nhấc chuột lên");
+        })
+
+        // swk kiện khi chuột nằm trên phần tử
+        myDiv.addEventListener("mouseover", () => {
+            console.log("chuột di chuyển nằm trên phần tử");
+            myDiv.style.backgroundColor = "red";
+        })
+
+        // sự kiện khi chuột nằm ngoài phần tử
+        myDiv.addEventListener("mouseout", () => {
+                console.log("chuột di chuyển nằm ngoài phần tử");
+                myDiv.style.backgroundColor = "green";
+        })
+
+        // sự kiện khi chuột di chuyển trên phần tử
+         myDiv.addEventListener("mouseover", () => {
+                console.log(Math.random());
+        })
+
+        
+
+    </script>
+</body>
+</html>
